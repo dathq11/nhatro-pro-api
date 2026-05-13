@@ -92,7 +92,6 @@ export class InvoicesService {
       },
     })
     if (!invoice) throw new NotFoundException('Không tìm thấy hoá đơn')
-    if (invoice.status !== 'DRAFT') throw new BadRequestException('Chỉ sửa được hoá đơn lưu nháp')
 
     const electricAmount = ((dto.electricKwh ?? invoice.electricKwh) * (dto.electricPrice ?? invoice.electricPrice))
     const waterAmount = ((dto.waterM3 ?? invoice.waterM3) * (dto.waterPrice ?? invoice.waterPrice))
