@@ -18,4 +18,7 @@ export class CreateContractDto {
 
   @IsOptional() @IsInt() @Min(0)
   vehicles?: number
+
+  @IsOptional() @IsInt() @Min(1)
+  occupants?: number
 }

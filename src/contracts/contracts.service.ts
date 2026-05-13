@@ -44,7 +44,7 @@ export class ContractsService {
 
     const [contract] = await this.prisma.$transaction([
       this.prisma.contract.create({
-        data: { ...dto, signDate, endDate, vehicles: dto.vehicles ?? 0 },
+        data: { ...dto, signDate, endDate, vehicles: dto.vehicles ?? 0, occupants: dto.occupants ?? 1 },
         include: { tenant: true },
       }),
       this.prisma.room.update({

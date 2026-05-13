@@ -78,6 +78,7 @@ model Contract {
   endDate    DateTime
   status     ContractStatus   @default(ACTIVE)
   vehicles   Int              @default(0)
+  occupants  Int              @default(1)
   createdAt  DateTime         @default(now())
   updatedAt  DateTime         @updatedAt
 
