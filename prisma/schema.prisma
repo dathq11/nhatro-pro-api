@@ -59,7 +59,7 @@ model Room {
 
 model Tenant {
   id        String   @id @default(cuid())
-  name      String
+  name      String?
   cccd      String?
   phone     String?
   createdAt DateTime @default(now())
